@@ -1,0 +1,41 @@
+{% extends 'app_general/components/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="home-landing-section">
+    <h1 class="home-landing-text">เนโกะชา</h1>
+    <h5 class="home-landing-text">ชานมอร่อย หวานมัน หอมชื่นใจ</h5>
+    <h6 class="home-landing-text">จัดส่งชานมโปรดของคุณฟรี ทุกวันจันทร์แรก จันทร์ที่สอง จันทร์ที่สาม ของแต่ละเดือน</h6>
+    <p>
+        <a class="button" href="{% url 'foods' %}">เมนูทั้งหมด</a>
+        <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
+    </p>
+</section>
+
+<section class="content-section">
+    <div class="content-container">
+        <h4 class="content-title text-center">อธิบายอะไรสักหน่อย</h4>
+        <div class="grid grid-3">
+            <div>
+                
+                <img class="image-block"  src="{% static 'app_general/home-about-1.jpg' %}">
+                <p>ใบชาที่เราใช้ทำชานมนั่นคือกัญชานม เพื่อให้คุณลูกค้าได้ดื่มด่ำกับรสชาติชานมที่กลมกล่อมและหวานละมุน </p>
+            </div>
+            <div>
+                <img class="image-block"  src="{% static 'app_general/home-about-2.jpg' %}">
+                <p>ชานมที่เราทำนั่น มีหลายรสชาติ แม้ว่าเป็นออเดอร์วันเดียวกันแต่สั่งคนละรอบก็จะได้รสชาติที่แตกต่างไม่ซ้ำกัน
+                </p>
+            </div>
+            <div>
+                <img class="image-block"  src="{% static 'app_general/home-about-3.jpg' %}">
+                <p>ใบชานั่นจะสกั่ดได้ออกมาอร่อยก็ต่อเมื่อผสมกับกัญชานมของทางร้าน
+                    หากผู้คนได้ลองชิมก็จะรู้สึกกระปรี้กระเปร่ากระชุ่มกระชวย</p>
+            </div>
+        </div>
+        <p class="text-center">
+            <a class="button" href="{% url 'about' %}">เกี่ยวกับเนโกะชา</a>
+        </p>
+    </div>
+</section>
+{% endblock %}

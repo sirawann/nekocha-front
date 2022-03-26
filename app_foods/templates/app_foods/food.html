@@ -1,0 +1,35 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %} {{ food.title }} | {% endblock %}
+{% load static %}
+{% block content %}
+<section class="content-section content-section-sigle">
+    <div class="content-container">
+        {% if food is not None %}
+        <div class="grid grid-2">
+            <img class="image-block" src="{% static food.image_relative_url %}">
+            <div>
+                <h3>{{ food.title }}</h3>
+                {% if food.special_price is not None %}
+                <P>
+                    <span>{{ food.special_price|floatformat:'g' }} บาท</span>
+                    <del class="text-gray">{{ food.price|floatformat:'g' }} บาท </del>
+                </P>
+                {% else %}
+                <P>{{ food.price|floatformat:'g' }} บาท</P>
+                {% endif %}
+                {% if food.is_premium %}
+                <p> ***เมนูพิเศษสุด Premium</p>
+                {% endif %}
+                <P>โปรโมชั่นถึงวันที่ {{food.promotion_end_at|date:'j N Y'}}</P>
+                <p>{{food.description}}</p>
+                <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
+            </div>
+        </div>
+        {% else %}
+        <P>ไม่พบเมนูี้</P>
+        {% endif %}
+
+    </div>
+</section>
+{% endblock %}
