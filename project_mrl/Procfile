@@ -1,2 +1,2 @@
-web: gunicorn project_mrl.wsgi
+web: gunicorn project_mrl.wsgi --log-file -
 release: pythonn manage.py migrate
