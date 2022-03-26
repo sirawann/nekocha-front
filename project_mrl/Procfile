@@ -1,4 +1,4 @@
-web: gunicorn project_mrl.wsgi
+web: gunicorn app:app
 release: python manage.py migrate
 
 
