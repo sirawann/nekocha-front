@@ -1,15 +1,13 @@
 {
-    "builds": [
+  "builds": [{
+      "src": "Amarillo/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+  }],
+  "routes": [
       {
-        "src": "Amarillo/wsgi.py",
-        "use": "@vercel/python",
-        "config": {"maxLambdaSize": "15mb", "runtime": "python3.9.5"}
-    }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "Amarillo/wsgi.py"
+          "src": "/(.*)",
+          "dest": "Amarillo/wsgi.py"
       }
-    ]
+  ]
 }
